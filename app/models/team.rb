@@ -8,10 +8,9 @@ class Team < ApplicationRecord
     client = Slack::Web::Client.new
     response = client.chat_postMessage(
       channel: slack_channel,
-      as_user: false,
-      text: "Team being added to pr feed"
+      text: "Team `#{name}` being added to pr feed"
     )
-    reaction_response = client.reactions_add(name: "approved", channel: slack_channel, timestamp: response["ts"])
+    reaction_response = client.reactions_add(name: "white_check_mark", channel: slack_channel, timestamp: response["ts"])
     raise ArgumentError "Slack channel id is not correct" unless reaction_response["ok"] == true
   end
 
