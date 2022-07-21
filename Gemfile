@@ -17,7 +17,7 @@ gem "mutations"
 gem "mimemagic", "~> 0.3.7" # Detect the mime type of a file by extension or by content
 gem "octokit", "~> 4.0"
 gem "restpack_serializer", "~> 0.6"
-gem "warden-github-rails", "~> 1.1.0"
+gem "warden-github-rails", "~> 1.3.0"
 gem "rack", "~> 2.2.2"
 gem "rack-cors", :require => "rack/cors"
 gem "sprockets"
