@@ -82,7 +82,5 @@ test:
 production:
   <<: *default
   database: pull_request_feed_production
-  username: <%= ENV['db_username'] %>
-  password: <%= ENV['db_password'] %>
-  host: prfeed-production.cgb0vvdbrqcr.us-east-1.rds.amazonaws.com
+  url: <%= ENV['DATABASE_URL'] %>
   port: 5432
