@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   if Rails.env.development?
     auth_routes
   else
-    github_authenticate(org: Rails.application.secrets.github_organization) do
+    # github_authenticate(org: Rails.application.secrets.github_organization) do
       auth_routes
-    end
+    # end
   end
 
   post "hooks/github" => "hooks#github"
