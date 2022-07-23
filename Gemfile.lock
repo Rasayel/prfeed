@@ -102,6 +102,7 @@ GEM
     hashie (5.0.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    jwt (2.4.1)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -125,6 +126,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.8.0)
     minitest (5.16.2)
+    multi_xml (0.6.0)
     multipart-post (2.2.3)
     mutations (0.9.0)
       activesupport
@@ -132,9 +134,29 @@ GEM
     nokogiri (1.13.7)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    oauth2 (2.0.6)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+      rash_alt (>= 0.4, < 1)
+      version_gem (~> 1.1)
     octokit (4.25.1)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
+    omniauth (2.1.0)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-github (2.0.0)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.7.1)
+    omniauth-oauth2 (1.7.3)
+      oauth2 (>= 1.4, < 3)
+      omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     pg (0.21.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -146,6 +168,8 @@ GEM
     racc (1.6.0)
     rack (2.2.4)
     rack-cors (1.0.3)
+    rack-protection (2.2.1)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (2.0.2)
@@ -175,6 +199,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (13.0.6)
+    rash_alt (0.4.12)
+      hashie (>= 3.4)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -184,6 +210,7 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    repost (0.3.8)
     restpack_serializer (0.6.10)
       activerecord (>= 4.0.3, < 6.1)
       activesupport (>= 4.0.3, < 6.1)
@@ -234,6 +261,7 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.10)
       thread_safe (~> 0.1)
+    version_gem (1.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     warden-github (1.3.2)
@@ -266,6 +294,9 @@ DEPENDENCIES
   mimemagic (~> 0.3.7)
   mutations
   octokit (~> 4.0)
+  omniauth (~> 2.1)
+  omniauth-github (~> 2.0)
+  omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 0.18)
   pry-rails
   puma (~> 3.7)
@@ -273,6 +304,7 @@ DEPENDENCIES
   rack-cors
   rails (= 5.2.3)
   react-rails
+  repost (~> 0.3.8)
   restpack_serializer (~> 0.6)
   retries
   rspec-rails (~> 3.7)

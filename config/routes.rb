@@ -1,6 +1,8 @@
-def auth_routes
+Rails.application.routes.draw do
   root "static#index"
 
+  get "login" => "sessions#new" 
+  get "auth/github/callback" => "sessions#create"
   get "pull_requests" => "pull_requests#index"
   post "pull_requests" => "pull_requests#create"
   post "pull_requests/bump" => "pull_requests#bump"
@@ -10,16 +12,6 @@ def auth_routes
   get "teams" => "teams#index"
   delete "teams/:id" => "teams#destroy"
   put "teams/:id" => "teams#update"
-end
-
-Rails.application.routes.draw do
-  if Rails.env.development?
-    auth_routes
-  else
-    # github_authenticate(org: Rails.application.secrets.github_organization) do
-      auth_routes
-    # end
-  end
 
   post "hooks/github" => "hooks#github"
   get "hooks/github" => "hooks#github"

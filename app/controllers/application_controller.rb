@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_team
-    Team.find(current_team_id)
+    @current_team ||= Team.find(current_team_id)
   end
 end

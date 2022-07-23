@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class TeamsController < AuthenticatedController
   def index
     teams = Team.all.sort_by(&:name)
     render json: ::TeamSerializer.as_json(teams, { current_team_id: current_team_id })

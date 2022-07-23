@@ -1,4 +1,3 @@
-class StaticController < ApplicationController
-  def index
-  end
+class StaticController < AuthenticatedController
+  def index; end
 end
