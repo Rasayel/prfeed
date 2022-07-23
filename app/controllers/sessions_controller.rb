@@ -2,7 +2,7 @@
 
 class SessionsController < ApplicationController
   def new
-    if current_user.present?
+    if session[:user].present?
       redirect_to root_path
     else
       render :new
